@@ -29,3 +29,12 @@ exports.getAll = async (search, from, to) => {
 };
 
 exports.getSingleCube = (id) => Cube.findById(id).populate("accessories");
+
+exports.attachAccessory = async (cubeId, accessoryId) => {
+  // return Cube.findByIdAndUpdate(cubeId, {
+  //   $push: { accessories: accessoryId },
+  // });
+  const cube = await this.getSingleCube(cubeId);
+  cube.accessories.push(accessoryId);
+  return cube.save();
+};
