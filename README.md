@@ -1,1 +1,1 @@
-Softuni workshop express and templating!
+Softuni workshop mongoDB and Mongoose!
